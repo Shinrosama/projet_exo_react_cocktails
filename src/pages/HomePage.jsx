@@ -1,13 +1,13 @@
+import Header from "../component/Header"
+
 function HomePage () {
 
     return (
         <>
+
+            <Header/>
             <div>
-                <h2></h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <h2>Le coin des Arsouilles</h2>
             </div>
         
         </>

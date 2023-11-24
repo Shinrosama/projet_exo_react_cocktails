@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { json } from "react-router-dom";
+import Header from "../component/Header";
 
 function CocktailPage () {
 
@@ -48,30 +49,34 @@ function CocktailPage () {
       })();
     }
     return (
-        <main>
+        
+        <>
+            <Header/>
+            <main>
 
-            {/* si on a chargé le document alors il affiche ce qui suit */}
-            {cocktails ? (
-                <>
-                {/* je veut parcourir mon objet */}
-                    {cocktails.map((cocktail) => {
-                    return (
-                        // je demande d'afficher les noms cocktails présents dans le tableau
-                        <article>
-                            <h2>{cocktail.strDrink} </h2>
-                            <img src= {cocktail.strDrinkThumb} alt= {cocktail.strDrink}/>
-                            <p>Categorie: {cocktail.strCategory}</p>
-                            <p>Instruction : {cocktail.strInstructions}</p>
-                        </article>
-                    );
-                    })}
-                </>
-            ) : (
-                // tant que le chargement n'est pas terminé il affichera le p
-                <p>cocktail chargement</p>
-            )}
-        </main>
 
+                {/* si on a chargé le document alors il affiche ce qui suit */}
+                {cocktails ? (
+                    <>
+                    {/* je veut parcourir mon objet */}
+                        {cocktails.map((cocktail) => {
+                        return (
+                            // je demande d'afficher les noms cocktails présents dans le tableau
+                            <article>
+                                <h2>{cocktail.strDrink} </h2>
+                                <img src= {cocktail.strDrinkThumb} alt= {cocktail.strDrink}/>
+                                <p>Categorie: {cocktail.strCategory}</p>
+                                <p>Instruction : {cocktail.strInstructions}</p>
+                            </article>
+                        );
+                        })}
+                    </>
+                ) : (
+                    // tant que le chargement n'est pas terminé il affichera le p
+                    <p>cocktail chargement</p>
+                )}
+            </main>
+        </>
     );
 }
 
