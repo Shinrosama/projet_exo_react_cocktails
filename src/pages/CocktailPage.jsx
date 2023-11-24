@@ -12,26 +12,40 @@ function CocktailPage () {
         if (!cocktails) {
     // je vais chercher la liste des cocktails sur une api via une url qui me retournera un tableau d'objets en json.
     // avec fetch je vais chercher les informations via l'url
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
+    // fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
 
-    // comme je ne reçoi pas directement la totalité de ma requète je récupère d'abord une promesse
-    // j'obtiens une réponse qui n'est pas lisible par java script on transforme alors la réponse en json lisible par réact
+    // // comme je ne reçoi pas directement la totalité de ma requète je récupère d'abord une promesse
+    // // j'obtiens une réponse qui n'est pas lisible par java script on transforme alors la réponse en json lisible par réact
     
-    .then((response) => {
+    // .then((response) => {
 
-        return response.json();
-    }) 
+    //     return response.json();
+    // }) 
 
-    // quand le fichier json est lisible par java scrip alors on envoi un console log
-    .then((cocktailsInJs) => {
+    // // quand le fichier json est lisible par java scrip alors on envoi un console log
+    // .then((cocktailsInJs) => {
 
-        //le console log sert a voir si on a récupéré le fichier lisible par js 
-        console.log(cocktailsInJs);
-        // on demande de stocker la valeur et de recharger le composant 
-        setCoctails (cocktailsInJs.drinks);
-    });
+    //     //le console log sert a voir si on a récupéré le fichier lisible par js 
+    //     console.log(cocktailsInJs);
+    //     // on demande de stocker la valeur et de recharger le composant 
+    //     setCoctails (cocktailsInJs.drinks);
+    // });
 
-}
+}// fonction anonyme asynchrone (elle pas de nom)
+    // qui s'autoinvoque
+    // cela permet d'effectuer des opérations asynchrones (fetch etc)
+    // sans devoir créer une vraie fonction asynchrone
+    // (qu'on devrait appeler avec un await)
+    (async () => {
+
+        // on appelle l'url avec le fetch on obtiens une promesse et on met await parce que la reception n'est pas immédiate (asycrhrone)
+        const coktailsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=");
+        // on traite le document reçu pour le faire passer de json en un format lisible par js le await sert car ce n'est pas immédiat
+        const cocktailsInJs = await coktailsResponse.json();
+
+        // setCocktails sert a stocker la nouvelle valeur du state et recharger le composant
+        setCocktails(cocktailsInJs.drinks);
+      })();
 
     return (
         <main>
