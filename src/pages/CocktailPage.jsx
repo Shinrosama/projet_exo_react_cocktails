@@ -31,7 +31,7 @@ function CocktailPage () {
     //     setCoctails (cocktailsInJs.drinks);
     // });
 
-}// fonction anonyme asynchrone (elle pas de nom)
+// fonction anonyme asynchrone (elle pas de nom)
     // qui s'autoinvoque
     // cela permet d'effectuer des opérations asynchrones (fetch etc)
     // sans devoir créer une vraie fonction asynchrone
@@ -46,7 +46,7 @@ function CocktailPage () {
         // setCocktails sert a stocker la nouvelle valeur du state et recharger le composant
         setCoctails(cocktailsInJs.drinks);
       })();
-
+    }
     return (
         <main>
 
