@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { json } from "react-router-dom";
 import Header from "../component/Header";
 
@@ -10,7 +10,7 @@ function CocktailPage () {
 
 
         // pour éviter de faire constament la requète d'un même élément au serveur de l'api on dit que si ce n'est pas l'état par défaut, alors on ne fait plus de fetch
-        if (!cocktails) {
+        useEffect (() => {
     // je vais chercher la liste des cocktails sur une api via une url qui me retournera un tableau d'objets en json.
     // avec fetch je vais chercher les informations via l'url
     // fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
@@ -47,7 +47,7 @@ function CocktailPage () {
         // setCocktails sert a stocker la nouvelle valeur du state et recharger le composant
         setCoctails(cocktailsInJs.drinks);
       })();
-    }
+    }, []);
     return (
         
         <>

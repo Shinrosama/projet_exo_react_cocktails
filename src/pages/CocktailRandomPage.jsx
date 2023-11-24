@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../component/Header";
 
 
@@ -7,7 +7,7 @@ function CocktailRandomPage () {
     // je cherche a effectuer un premier passage avec l'état par défaut, et pouvoir socker un second état afin d'afficher les éléments voulus.
     const [randomCocktail, setRandomCocktail] = useState (null)
     // j'utilise un if pour laisser le premier passage avec l'état par défaut effectuer les taches de récupération asynchrones
-    if(randomCocktail === null) {
+   useEffect (() => {
         // la fonction async est spéciale car on ne peu pas faire de await dans une fonction normale, on isole alors dans cette fonction une autre asychrone. 
         (async() => {
 
@@ -18,7 +18,7 @@ function CocktailRandomPage () {
             // on retourne une nouvelle valeur d'état que l'on stoque tout en rechargeant le composant
             setRandomCocktail (coctailJs.drinks[0]);
         })();
-    }
+    }, []);
 
     return (
         <>
@@ -28,6 +28,9 @@ function CocktailRandomPage () {
                 {randomCocktail != null ? (
                     <article>
                         <h1>{randomCocktail.strDrink}</h1>
+                        <img src= {randomCocktail.strDrinkThumb} alt= {randomCocktail.strDrink}/>
+                        <p>Categorie: {randomCocktail.strCategory}</p>
+                        <p>Instruction : {randomCocktail.strInstructions}</p>
                     </article>
 
                 ):(
