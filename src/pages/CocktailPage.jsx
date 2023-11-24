@@ -44,7 +44,7 @@ function CocktailPage () {
         const cocktailsInJs = await coktailsResponse.json();
 
         // setCocktails sert a stocker la nouvelle valeur du state et recharger le composant
-        setCocktails(cocktailsInJs.drinks);
+        setCoctails(cocktailsInJs.drinks);
       })();
 
     return (
