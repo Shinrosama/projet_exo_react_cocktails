@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CocktailPage from './pages/CocktailPage';
 import HomePage from './pages/HomePage';
 import CocktailRandomPage from './pages/CocktailRandomPage';
+import CategoriesPage from './pages/CategoriesPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element= {<HomePage />} />
         <Route path="/cocktail" element= {<CocktailPage/>} />
         <Route path="/coctailRandom" element= {<CocktailRandomPage/>} />
+        <Route path="/categories" element= {<CategoriesPage/>} />
       </Routes>
     </BrowserRouter>
   </>

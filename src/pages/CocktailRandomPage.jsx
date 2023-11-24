@@ -7,7 +7,12 @@ function CocktailRandomPage () {
     // je cherche a effectuer un premier passage avec l'état par défaut, et pouvoir socker un second état afin d'afficher les éléments voulus.
     const [randomCocktail, setRandomCocktail] = useState (null)
     // j'utilise un if pour laisser le premier passage avec l'état par défaut effectuer les taches de récupération asynchrones
-   useEffect (() => {
+   
+   
+
+   //la fonction useEffect permet de passer par la fonction asyc lors du premier chargement et de faire barrage lors des chargements suivants.
+   // le tableau vide a la fin de la fonction sert a préciser quand recharger le composant.
+    useEffect (() => {
         // la fonction async est spéciale car on ne peu pas faire de await dans une fonction normale, on isole alors dans cette fonction une autre asychrone. 
         (async() => {
 
