@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 
-function IngredientPage () {
+function IngredientsPage () {
 
     const [ingredients, setIngredients] = useState(null)
 
@@ -44,4 +44,4 @@ function IngredientPage () {
     )
 }
 
-export default IngredientPage
+export default IngredientsPage

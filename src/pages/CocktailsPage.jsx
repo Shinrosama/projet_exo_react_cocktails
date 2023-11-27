@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, json } from "react-router-dom";
+
 import Header from "../component/Header";
 import CocktailCard from "../component/CocktailCard";
 
-function CocktailPage () {
+function CocktailsPage () {
+
 
 
         // je crée un état null de useState afin de faire un premier passage avec un état par défaut
@@ -77,4 +78,4 @@ function CocktailPage () {
 }
 
 
-export default CocktailPage;
+export default CocktailsPage;
