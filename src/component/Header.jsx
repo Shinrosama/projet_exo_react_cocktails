@@ -16,7 +16,13 @@ function Header () {
                     <li>
                         <Link to="/coctailRandom">Random Cocktail</Link>
                     </li>
-                   
+                    <li>
+                        <Link to="/categories">Categories</Link>
+                    </li>
+                    <li>
+                        <Link to={"/ingredients"}>Ingredients</Link>
+                    </li>
+
                 </ul>
                 
                      

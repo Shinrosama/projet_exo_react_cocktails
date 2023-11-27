@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "../component/Header";
 
 function CategoriesPage () {
 
@@ -14,22 +15,25 @@ function CategoriesPage () {
     },[] );
 
     return (
-        <main>
-            {categories ? (
-                <div>
-                    {categories.map((category) => {
-                        return (
-                            <article>
-                                <h2>{category.strCategory} </h2>
-                            </article>
-                        )
-                    })}
-                </div>
-            ) : (
+        <>
+            <Header/>
+            <main>
+                {categories ? (
+                    <div>
+                        {categories.map((category) => {
+                            return (
+                                <article>
+                                    <h2>{category.strCategory} </h2>
+                                </article>
+                            )
+                        })}
+                    </div>
+                ) : (
 
-                <p>Loading</p>
-            )}
-        </main>
+                    <p>Loading</p>
+                )}
+            </main>
+        </>
     )
 }
 
