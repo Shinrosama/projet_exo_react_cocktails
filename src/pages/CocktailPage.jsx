@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { json } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import Header from "../component/Header";
 
 function CocktailPage () {
@@ -65,8 +65,8 @@ function CocktailPage () {
                             <article>
                                 <h2>{cocktail.strDrink} </h2>
                                 <img src= {cocktail.strDrinkThumb} alt= {cocktail.strDrink}/>
-                                <p>Categorie: {cocktail.strCategory}</p>
-                                <p>Instruction : {cocktail.strInstructions}</p>
+                                <Link to= {`/cocktail/detail/${cocktail.idDrink}`}> voir détail</Link> 
+                                
                             </article>
                         );
                         })}
