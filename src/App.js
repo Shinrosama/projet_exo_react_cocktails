@@ -19,6 +19,7 @@ function App() {
         <Route path="/categories" element= {<CategoriesPage/>} />
         <Route path="/ingredients" element= {<IngredientPage/>} />
         <Route path="/cocktail/detail/:id" element= {<CocktailDetailPage/>} />
+        
       </Routes>
     </BrowserRouter>
   </>

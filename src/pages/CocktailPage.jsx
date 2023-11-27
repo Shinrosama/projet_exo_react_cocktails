@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, json } from "react-router-dom";
 import Header from "../component/Header";
+import CocktailCard from "../component/CocktailCard";
 
 function CocktailPage () {
 
@@ -62,12 +63,7 @@ function CocktailPage () {
                         {cocktails.map((cocktail) => {
                         return (
                             // je demande d'afficher les noms cocktails présents dans le tableau
-                            <article>
-                                <h2>{cocktail.strDrink} </h2>
-                                <img src= {cocktail.strDrinkThumb} alt= {cocktail.strDrink}/>
-                                <Link to= {`/cocktail/detail/${cocktail.idDrink}`}> voir détail</Link> 
-                                
-                            </article>
+                            <CocktailCard cocktailToDisplay={cocktail} />
                         );
                         })}
                     </>
